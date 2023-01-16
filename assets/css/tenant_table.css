@@ -1,0 +1,40 @@
+
+p.two {
+    border-style: solid;
+    border-width: 5px;
+    border-radius:10px;
+  }
+  
+  h1 {
+    color: #154360;
+  }
+  .wrapper{
+              width: 800px;
+              margin: 0 auto;
+          }
+          table tr td:last-child{
+              width: 100px;
+          } .btn {
+    background-color:  #117A65;
+    border: none;
+    color: white;
+    padding: 13px 25px;
+    padding:0rem 1rem 1rem 1rem;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /* Darker background on mouse-over */
+  .btn:hover {
+    background-color: #DC7633;
+  }
+  
+  .form-group div
+      {
+        color: red;
+        size: 80%
+      }
+      .hidden
+      {
+        display:none;
+      }
