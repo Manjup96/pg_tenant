@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-90">
 <head>
-<body style="background-color:#D6DBDF;">
+<!-- <body style="background-color:#D6DBDF;"> -->
   <title>Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">

@@ -2,7 +2,7 @@
 <html>
 <head>
    
-<!-- <body style="background-color:#D6DBDF;"> -->
+<body style="background-color:#D6DBDF;">
   <title>Admin</title>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +13,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-   
-        
+
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -23,7 +22,15 @@
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
   </head>
 </head>
-
+<body>
+    
+        <?php
+            include "./adminHeader.php";
+            include "./sidebar.php";
+            
+           // include_once "./config/dbconnect.php";
+        ?>
+        
 <?php
 // Start the session
 //  session_start();
@@ -47,21 +54,13 @@
 
                          
                            
-    <body class="smokewhite_bg_color">
-    
-    <?php
-        include "./adminHeader.php";
-        include "./sidebar.php";
-        include "./commonlinks.php";
 
-    ?>
-    
 
 
     <div class="container" style="margin-right:500px">
     <div class="row">            
-                                     <div class="col-lg-3 mb-4">
-                                 <!-- <div class="col-10 col-md-8 col-lg-6 mb-4"> -->
+        
+                                 <div class="col-lg-3 mb-4">
                                     <div class="card bg-dark text-white shadow" >
                                         <div class="card-body" >
                                             Total Rooms  <label id="total_rooms"></label>
@@ -133,16 +132,21 @@
                             </div>-->
 
               <!-- Barchart -->
-              <div class="container">
-    <div class="row">            
-    <div class=" col-lg-3 mb-4">
+       
+              
+    <div class="container" style="margin-right:0px">    
+    <div class="row">  
+    <div class="col-lg-6 mb-4">  
     <div class="chartCard">
       <div class="chartBox">
         <canvas id="myChart"></canvas>
       </div>
-    </div>
+      </div>
+      </div>
+      </div>
+    
 
-                        </div>
+          </div>
 
    
 
@@ -168,9 +172,6 @@
 
 
 </div>
-</div>
-<!-- </div>
-</div> -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script type="text/javascript" src="./assets/js/ajaxWork.js"></script>    
     <script type="text/javascript" src="./assets/js/script.js"></script>
@@ -263,7 +264,7 @@
           'rgba(0, 0, 0, 1)'
         ],
         borderWidth: 1,
-        barThickness:80
+        barThickness:50
       }]
     };
 
@@ -288,8 +289,7 @@
     </script>
    
     <!-- Barchat CSS -->
- <!-- Barchat CSS -->
- <style>
+     <style>
      
      * {
         margin: 0;
@@ -313,17 +313,18 @@
         display: flex;
         align-items: center;
         justify-content: start;
-        margin-left:0px;
+        margin-right:100px;
       }
       
       .chartBox {
-        width: 400px;
-        padding: 10px;
+        width: 700px;
+        padding: 20px;
         border-radius: 20px;
         border: solid 3px rgba(54, 162, 235, 1);
         
       }
 
     </style>
- </body>
+
+ 
 </html>

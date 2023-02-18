@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-90">
 <head>
-<body style="background-color:#D6DBDF;">
   <title>Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -21,7 +20,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-
+     
+        
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -35,50 +35,41 @@
        <link rel="stylesheet" href="./assets/css/style.css"></link>
 
 
-       <?php
-            include "./adminHeader.php";
-            include "./sidebar.php";
-           
-            include_once "./config/dbconnect.php";
-        ?>
+       
 
 
 </head>
 <style>
-p.two {
-  border-style: solid;
-  border-width: medium;
-  border-radius:20px;
-}
-
-h1 {
-  color: #B9770E;
-} .btn {
-  background-color: DodgerBlue;
+ 
+.btn {
+  background-color:dark;
   border: none;
-  color: black;
+  /* color: black; */
   padding: 10px 25px;
   padding:0rem 1rem 1rem 1rem;
   cursor: pointer;
   font-size: 20px;
 }
 
-.form-group div
-    {
-      color: red;
-      size: 80%
-    }
-    .hidden
-    {
-      display:none;
-    }
+
 </style>
 		
-    <body class="h-100">
+    <body class="smokewhite_bg_color">
+    <?php
+            include "./adminHeader.php";
+            include "./sidebar.php";
+            include "./commonlinks.php";
+            include_once "./config/dbconnect.php";
+        ?>
 
-
-    <a href="meals_table.php"  > <div style="margin-left:910px">
+    <div class="container h-80 ">
+            <div class="row h-90 justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-6">
+    <a href="meals_table.php"> <div style="margin-left:250px">
 <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
+</div>
+</div>
+</div>
     	<div class="container h-80 ">
             <div class="row h-90 justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 3px;
@@ -123,7 +114,7 @@ h1 {
                      
                          
                           
-						<center><button type="submit" class="btn btn-success btn-customized">submit</button>
+						<center><button type="submit" class="btn btn-dark mb-1  btn-customized">submit</button>
                              </center>
 						
                 	</form>
@@ -155,22 +146,25 @@ form.addEventListener('submit', function(e){
  e.preventDefault()
  var mealsDate = document.getElementById("mealsDate").value; 
      var mealsComments = document.getElementById("mealsComments").value; 
-  
+     var building_name = document.getElementById("building").value;
+     var managerEmail = document.getElementById("manager_email").value;
+     var managerMobile = document.getElementById("manager_mobile").value;
     
      console.log(mealsDate,mealsComments);
    
  fetch('https://iqbetspro.com/pg-management/meals-POST-API.php', {
   method: 'POST',
   body: JSON.stringify(
-
-
     {
     "date":mealsDate,
      "breakfast":"yes",
       "tenant_mobile":"9595595959", 
       "lunch":"no",
        "dinner":"no",
-        "comments":mealsComments
+        "comments":mealsComments,
+        "building_name": building_name,
+      "manager_email":managerEmail,
+    "manager_mobile_no":managerMobile,
 }
   ),
   headers: {
