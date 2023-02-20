@@ -32,7 +32,7 @@
 
 </head>
 <style>
-p.two {
+/* p.two {
   border-style: solid;
   border-width: 5px;
   border-radius:10px;
@@ -47,8 +47,9 @@ h1 {
         }
         table tr td:last-child{
             width: 100px;
-        } .btn {
-  background-color: #4b4c4c;
+        }  */
+.btn {
+  background-color: dark;
   border: none;
   color: white;
   padding: 13px 25px;
@@ -62,7 +63,7 @@ h1 {
   background-color: #1e1d1c;
 } */
 
-.form-group div
+/* .form-group div
     {
       color: red;
       size: 80%
@@ -76,7 +77,7 @@ h1 {
   content:" *";
   color: red;
   font-size:20px;
-}
+} */
 </style>
 		
     <body class="smokewhite_bg_color">
@@ -183,6 +184,6 @@ h1 {
             });
         }
 </script>
-</script>
+
     </body>
 </html>

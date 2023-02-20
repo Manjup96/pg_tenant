@@ -287,43 +287,44 @@
     );
     </script>
    
-    <!-- Barchat CSS -->
- <!-- Barchat CSS -->
- <style>
-     
-     * {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      .chartMenu {
-        width: 100vw;
-        height: 40px;
-        background: #1A1A1A;
-        color: rgba(54, 162, 235, 1);
-      }
-      .chartMenu p {
-        padding: 10px;
-        font-size: 20px;
-      }
+ 
+   <!-- Barchat CSS -->
+   <style>
       
-      .chartCard {
-        width: 100vw;
-        padding-bottom:30px;     
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin-left:0px;
-      }
-      
-      .chartBox {
-        width: 400px;
-        padding: 10px;
-        border-radius: 20px;
-        border: solid 3px rgba(54, 162, 235, 1);
-        
-      }
+      * {
+         margin: 0;
+         padding: 0;
+         font-family: sans-serif;
+       }
+       .chartMenu {
+         width: 100vw;
+         height: 40px;
+         background: #1A1A1A;
+         color: rgba(54, 162, 235, 1);
+       }
+       .chartMenu p {
+         padding: 10px;
+         font-size: 20px;
+       }
+       
+       .chartCard {
+         width: 100vw;
+         padding-bottom:30px;     
+         display: flex;
+         align-items: center;
+         justify-content: start;
+         margin-left:5px;
+       }
+       
+       .chartBox {
+         width: 400px;
+         padding: 20px;
+         border-radius: 20px;
+         border: solid 3px rgba(54, 162, 235, 1);
+         
+       }
+ 
+     </style> 
 
-    </style>
  </body>
 </html>

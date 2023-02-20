@@ -44,13 +44,23 @@
 .btn {
   background-color:dark;
   border: none;
-  /* color: black; */
+   color: white;
   padding: 10px 25px;
   padding:0rem 1rem 1rem 1rem;
   cursor: pointer;
   font-size: 20px;
 }
 
+/* textarea{
+    width:100%;
+    padding:15px;
+    margin-top:5px;
+    border:1px solid #7ac9b7;
+    border-radius:5px;
+    margin-bottom:10px;
+    resize:none;
+    font-size:16px;
+  } */
 
 </style>
 		
@@ -110,7 +120,7 @@
                             </br>
                                 <!--  <textarea id="mealsComments" name="mealsComments" placeholder=""rows="1" cols="23" style="height:150px" ></textarea></div> --> 
                                   <textarea id="mealsComments" name="mealsComments" placeholder="Write something.." style="height:200px"></textarea>                              
-                                </br>
+</br>
                      
                          
                           

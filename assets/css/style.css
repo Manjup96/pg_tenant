@@ -12,6 +12,8 @@
   border-radius:10px;
 
 }
+
+
 .form-group div
     {
       color: red;
@@ -28,14 +30,9 @@
   font-size:20px;
 }
 
-h1{
+/* h1{
   color:#393632;
-}
-
-h2 {
-    text-align: center;
-    color: black;
-  }
+} */
 
 textarea{
     width:100%;
@@ -251,7 +248,7 @@ body{ background-color:#ececec;}
       padding: 8px 8px 8px 32px;
       text-decoration: none;
       font-size: 22px;
-      color: #4f4a4a;
+      color:black;
       display: block;
       transition: 0.3s;
     }
@@ -264,7 +261,7 @@ body{ background-color:#ececec;}
 
     /* When you mouse over the navigation links, change their color */
     .sidebar a:hover {
-      /* background-color:#bdb6b6; */
+      background-color:#e6e0e0;
       color:rgb(11, 11, 11);
       font-size: 24px;
     }
@@ -294,7 +291,7 @@ body{ background-color:#ececec;}
     
     
     .search-container button>i:hover {
-        background-color:#000000  ;
+       background-color:#000000  ; 
       }
 
   
@@ -317,7 +314,7 @@ body{ background-color:#ececec;}
     }
     
     .openbtn:hover {
-      color: #138D75;
+      color: #b4bbba;
     }
     
     /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -491,7 +488,7 @@ transition: all 0.218s;
 .btn.btn-signin:hover,
 .btn.btn-signin:active,
 .btn.btn-signin:focus {
-background-color: #302f2e;
+ background-color: #302f2e; 
 }
 
 

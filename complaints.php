@@ -37,8 +37,7 @@
 
 </head>
 <style>
-
-/* .btn {
+ .btn {
   background-color: dark;
   border: none;
   color: black;
@@ -46,7 +45,7 @@
   padding:0rem 1rem 1rem 1rem;
   cursor: pointer;
   font-size: 20px;
-} */
+} 
 
 </style>
 		

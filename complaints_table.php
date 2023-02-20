@@ -36,7 +36,7 @@
 <style>
 
         .btn {
-  background-color: #4b4c4c;
+  background-color: dark;
   border: none;
   color: white;
   padding: 13px 25px;

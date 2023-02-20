@@ -1,7 +1,8 @@
 <div class="sidebar">
     <nav class="navbar bg-light navbar-light">
         <a href="index.html" class="navbar-brand mx-4 mb-3">
-        <h5 style="margin-top:10px;color:white">Hi  <?php echo $_SESSION['username'] ;?> <?php echo $tenant_name;?> </h5>
+        <h5 style="margin-top:10px;color:black">Hi  <?php echo $_SESSION['username'] ;?> <?php echo $tenant_name;?> </h5>
+
             <img src="img/logo.png" style="width:100%;" />
         </a>
       

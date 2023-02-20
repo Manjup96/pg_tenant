@@ -40,9 +40,9 @@
 <style>
 
 .btn {
-  background-color: DodgerBlue;
+  background-color: dark;
   border: none;
-  color: black;
+  color: white;
   padding: 10px 25px;
   padding:0rem 1rem 1rem 1rem;
   cursor: pointer;
