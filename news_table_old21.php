@@ -12,7 +12,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style1.css">
 
 
         <!-- Favicon and touch icons -->
@@ -25,35 +25,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="./assets/css/style.css"></link>
+       <link rel="stylesheet" href="./assets/css/style1.css"></link>
+
 
 
 
 </head>
-<body class="smokewhite_bg_color">
-   
-    <?php
+<style>
+/* p.two {
+  border-style: solid;
+  border-width: 5px;
+  border-radius:10px;
+}
+
+h1 {
+  color: #154360;
+}
+.wrapper{
+            width: 800px;
+            margin: 0 auto;
+        }
+        table tr td:last-child{
+            width: 100px;
+        }  */
+.btn {
+  background-color: dark;
+  border: none;
+  color: white;
+  padding: 13px 25px;
+  padding:0rem 1rem 1rem 1rem;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+/* .btn:hover {
+  background-color: #1e1d1c;
+} */
+
+/* .form-group div
+    {
+      color: red;
+      size: 80%
+    }
+    .hidden
+    {
+      display:none;
+    }
+
+    .required::after{
+  content:" *";
+  color: red;
+  font-size:20px;
+} */
+</style>
+		
+    <body class="smokewhite_bg_color">
+        
+       <?php
             include "./adminHeader.php";
             include "./sidebar.php";
             include "./commonlinks.php";
+           
           
         ?>
+    
+
 
          
     <script type="text/javascript" src="./assets/js/script.js"></script>
    <div class="wrapper" style="margin-right:700px" id="show_table">
-        <div class="container-fluid">
+        <div class="container-fluid" >
             <div class="row">
                 <div class="col-md-12 lead">
                     <div class="mt-2 mb-6 clearfix">
-                    <div style="margin-left:50px;width:800px">
+                    <div style="margin-left:50px;width:780px">
                     <center><div class="p-3 mb-2  mr-5 bg text-black">News details</div></center>
                     
                     <div class="search-container">
                      <input type="text" placeholder="Search with Name.." name="search" id="searchInput" onkeyup="searchTable()">
                      <button type="submit"><i class="fa fa-search"></i></button>
                         <!--<a href="complaints.php" class="btn btn-success pull-right" style="margin:10px";><i class="fa fa-plus"></i>&nbsp;Add complaints</a> -->
-                        <button type="submit" class="btn btn-dark " style="margin:10px"; onclick="Export()"><i class="fa fa-download"></i>&nbsp; Download</button>
+                        <button type="submit" class="btn btn-success " style="margin:10px"; onclick="Export()"><i class="fa fa-download"></i>&nbsp; Download</button>
 
 </div>
 </div>
@@ -131,6 +184,6 @@
             });
         }
 </script>
-</script>
+
     </body>
-    </html>
+</html>

@@ -1,7 +1,6 @@
 <html lang="en" class="h-100">
 
     <head>
-      
 		<!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +11,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-        
 
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.png">
@@ -21,38 +19,31 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
         <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-        <?php
-            // include "./adminHeader.php";
-          ?>
+        
         </head>
-<style>
-p.two {
-  border-style: solid;
-  border-width: medium;
-  border-radius:20px;
-}
 
-/* h1 {
-  color: #7B241C;
-} */
-
-</style>
 <!-- <?php
 session_start();
 $_SESSION["username"] = $_GET['tenant_name'];
 ?> -->
 
-    <body>
-  
-                    <div class="container h-100 ">
+<body class="smokewhite_bg_color">
+   
+   <?php
+        //    include "./adminHeader.php";
+          
+         
+       ?>
+    
+    	
+    	<div class="container h-100 ">
             <div class="row h-100 justify-content-center align-items-center"  >
                 <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 5px;border-radius: 25px;
                  padding: 20px;
-  box-shadow: 10px 10px #a8a39d;">
+  box-shadow: 5px 10px #76D7C4;">
 					<!-- Form  dashboard.php-->
                 	<form id="form" class="form-example" action="" method="post" >
-                    <h1><center><div class="p-3 mb-2 bg- text-black text-bold" ><p class="two">PG Tenant Login Form</p></div></center></h1>
-                		
+                    <h1><center><div class="p-3 mb-2 bg- text-black" ><p class="two">PG Manager Login Form</p></div></center></h1>
                 		
                 		<!-- Input fields -->
                 		<div class="form-group">
@@ -90,7 +81,7 @@ form.addEventListener('submit', function(e){
  var username=document.getElementById('username').value;
  var password=document.getElementById('password').value;
 
- fetch('https://iqbetspro.com/pg-management/Tenant-login-API.php', { 
+ fetch('https://iqbetspro.com/pg-management/TENANT-login-API-managers-buildings.php', { 
   //i will write api for it ,dp other workes like sets sesiion,sidebar
   method: 'POST',
   body: JSON.stringify({    
@@ -119,6 +110,14 @@ form.addEventListener('submit', function(e){
  tenant.username = data[0].Message.tenant_name;
  tenant.email = data[0].Message.tenant_email;
  tenant.mobile = data[0].Message.tenant_mobile;
+ tenant.floor_no = data[0].Message.floor_no;
+ tenant.room_no = data[0].Message.room_no;
+ tenant.bed_no = data[0].Message.bed_no;
+ 
+            //  "floor_no": "1",
+            // "room_no": "102",
+            // "bed_no": "2"
+ 
 
       console.log(tenant)
       // alert("OK");

@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en" class="h-90">
 <head>
-<!-- <body style="background-color:#D6DBDF;"> -->
   <title>Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -21,7 +20,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/css/style.css">
-
+     
+        
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="assets/ico/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
@@ -35,21 +35,28 @@
        <link rel="stylesheet" href="./assets/css/style.css"></link>
 
 
+       
 
 
 </head>
 
-<body class="smokewhite_bg_color">
-   
-   <?php
-           include "./adminHeader.php";
-           include "./sidebar.php";
-           include "./commonlinks.php";
-         
-       ?>
+		
+    <body class="smokewhite_bg_color">
+    <?php
+            include "./adminHeader.php";
+            include "./sidebar.php";
+            include "./commonlinks.php";
+            include_once "./config/dbconnect.php";
+        ?>
 
-    <a href="meals_table.php"  > <div style="margin-left:910px">
+    <div class="container h-80 ">
+            <div class="row h-90 justify-content-center align-items-center">
+            <div class="col-10 col-md-8 col-lg-6">
+    <a href="meals_table.php"> <div style="margin-left:250px">
 <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
+</div>
+</div>
+</div>
     	<div class="container h-80 ">
             <div class="row h-90 justify-content-center align-items-center">
                 <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 3px;
@@ -64,34 +71,37 @@
                 
                               
                                                        <div>
-                                                    <input type="checkbox" id="breakfast" name="breakfast" onclick="breakfast_meals()">
-                                                            
+                                                    <input type="checkbox" id="Breakfast" name="drone" value="huey"
+                                                             checked>
                                                     <label for="mealsBreakfast">Breakfast</label>
                                                      </div>
                                                      <div>
-                                                    <input type="checkbox" id="lunch" name="lunch" onclick="breakfast_lunch()">
+                                                    <input type="checkbox" id="Lunch" name="drone" value="huey">
                                                     <label for="mealsLunch">Lunch</label>
                                                      </div>
                                                      <div>
-                                                     <input type="checkbox" id="dinner" name="dinner" onclick="breakfast_dinner()">
+                                                     <input type="checkbox" id="Dinner" name="drone" value="huey">
                                                     <label for="mealsDinner">Dinner</label>
                                                      </div>
 </br>
+
                                <div class="form-group">
 							          <label for="mealsDate">Date:</label>
 							          <input type="date" class="form-control mealsDate" id="mealsDate" placeholder="" name="mealsDate">
                         
 					            </div> 
-                              <div class="form-group ">
+                         
+
+                          <div class="form-group ">
                             <label for="mealsComments">comments</label>
                             </br>
                                 <!--  <textarea id="mealsComments" name="mealsComments" placeholder=""rows="1" cols="23" style="height:150px" ></textarea></div> --> 
                                   <textarea id="mealsComments" name="mealsComments" placeholder="Write something.." style="height:200px"></textarea>                              
-                                </br>
+</br>
                      
                          
                           
-						<center><button type="submit" class="btn btn-dark btn-customized">submit</button>
+						<center><button type="submit" class="btn btn-dark mb-1  btn-customized">submit</button>
                              </center>
 						
                 	</form>
@@ -101,37 +111,6 @@
         </div>
 
 <script>
-function breakfast_meals() {
-  if ( document.getElementById("breakfast").checked == true){
-   document.getElementById("breakfast").value="yes";
-   
-  console.log("breakfast=",document.getElementById("breakfast").value);
-  } else {
-    document.getElementById("breakfast").value="no";
-  }
-}
-
-function breakfast_lunch() {
-  if ( document.getElementById("lunch").checked == true){
-   document.getElementById("lunch").value="yes";
-   
-  console.log("lunch=",document.getElementById("lunch").value);
-  } else {
-    document.getElementById("lunch").value="no";
-  }
-}
-
-function breakfast_dinner() {
-  if ( document.getElementById("dinner").checked == true){
-   document.getElementById("dinner").value="yes";
-   
-  console.log("dinner=",document.getElementById("dinner").value);
-  } else {
-    document.getElementById("dinner").value="no";
-  }
-}
-
-
         $(function(){
     var dtToday = new Date();
  
@@ -152,61 +131,27 @@ function breakfast_dinner() {
 
 form.addEventListener('submit', function(e){
  e.preventDefault()
-
  var mealsDate = document.getElementById("mealsDate").value; 
      var mealsComments = document.getElementById("mealsComments").value; 
-     
- var tenant_name = document.getElementById("tenant_name").value;
-     var tenant_mobile = document.getElementById("tenant_mobile").value; 
-     var tenant_email = document.getElementById("tenant_email").value; 
+     var building_name = document.getElementById("building").value;
+     var managerEmail = document.getElementById("manager_email").value;
+     var managerMobile = document.getElementById("manager_mobile").value;
     
-     var floor_no =  document.getElementById("floor_no").value; 
-     var room_no =  document.getElementById("room_no").value; 
-     var bed_no =  document.getElementById("bed_no").value; 
-    
-     var building_name = document.getElementById("building_name").value;
-    var managerEmail = document.getElementById("manager_email").value;
-    var managerMobile = document.getElementById("manager_mobile").value; 
-    
-     var breakfast= document.getElementById("breakfast").value;
-    var lunch= document.getElementById("lunch").value;
-    var dinner= document.getElementById("dinner").value;
-    
- console.log("building_name=",building_name)
-    console.log("managerEmail=",managerEmail)
-    console.log("managerMobile=",managerMobile)
-   
-     
-     
-    console.log("tenantUsername=",tenant_name)
-    console.log("tenantMobileNumbe=",tenant_mobile)
-    console.log("tenantEmail=",tenant_email)
-    console.log("floor_no=",floor_no)
-    console.log("bed_no=",bed_no)
-    console.log("room_no=",room_no)
-     console.log("breakfast=",breakfast)
-    console.log("lunch=",lunch)
-    console.log("dinner=",dinner)
-   
      console.log(mealsDate,mealsComments);
    
-     fetch('https://iqbetspro.com/pg-management/MEALS-POST-by-tenant-API.php', {
+ fetch('https://iqbetspro.com/pg-management/meals-POST-API.php', {
   method: 'POST',
   body: JSON.stringify(
     {
-        "tenant_name":tenant_name,
     "date":mealsDate,
-     "breakfast":breakfast,
-      "tenant_mobile":tenant_mobile, 
-      "lunch":lunch,
-       "dinner":dinner,
+     "breakfast":"yes",
+      "tenant_mobile":"9595595959", 
+      "lunch":"no",
+       "dinner":"no",
         "comments":mealsComments,
         "building_name": building_name,
       "manager_email":managerEmail,
-   
-    "floor_no":floor_no,
-    "room_no":room_no,
-    "bed_no":bed_no,
+    "manager_mobile_no":managerMobile,
 }
   ),
   headers: {
@@ -217,24 +162,17 @@ form.addEventListener('submit', function(e){
   return response.json()})
   .then(function(data)
   {
-    console.log(data);
+    console.log(typeof(data[0].Message));
+    //console.log(data[0].Message.response)
+     alert("ok");
     if(data[0].Message.response =='error')
-    { 
-        alert("Meals Registered failed");
-      window.location = "meals.php";
-        
-    }
+    {  alert("Meals Registered failed");
+      window.location = "meals.php";}
     else
    { 
     alert("Meals Registered Succesfully");
-    window.location = "meals_table.php";
-       
-   }
+    window.location = "meals_table.php";}
 
 }).catch(error => console.error('Error:', error)); 
 });
-  
-    
 </script>   
-</body>
-</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-90">
 <head>
-<!-- <body style="background-color:#D6DBDF;"> -->
+
   <title>Admin</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -12,7 +12,8 @@
         <!-- CSS -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style1.css">
+        
 
 
         <!-- Favicon and touch icons -->
@@ -25,21 +26,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="./assets/css/style.css"></link>
+       <link rel="stylesheet" href="./assets/css/style1.css"></link>
+
+
 
 
 
 </head>
+<style>
 
+        /* .btn {
+  background-color: dark;
+  border: none;
+  color: white;
+  padding: 13px 25px;
+  padding:0rem 1rem 1rem 1rem;
+  cursor: pointer;
+  font-size: 20px;
+} */
+
+
+</style>
 		
-<body class="smokewhite_bg_color">
-    <?php
-       include "./adminHeader.php";
-       include "./sidebar.php";
-       include "./commonlinks.php";
-       ?>
+    <body class="smokewhite_bg_color">
     
-
+    <?php
+            include "./adminHeader.php";
+            include "./sidebar.php";
+            include "./commonlinks.php";
+           
+          
+        ?>
 
 <div id="show_edit_form">
 <div class="container h-80 ">
@@ -49,23 +66,31 @@
                  padding: 20px;box-shadow: 5px 10px #76D7C4;">
    <form id="complaint_edit">
      <input type="hidden"  id="id_value">
-  <center><div class="p-3 mb-2  mr-5 bg- text-black" ><p class="two">complaint details</p></div></center>
+  <center><div class="p-3 mb-2  mr-3 bg- text-black" ><p class="two">complaint details</p></div></center>
   
   
   
                                   
-                          <div><label for="complaintType">Complaint Type</label>
-                                  <input type="text" id="complaintType" name="complaintType" placeholder=" " ></textarea></div>
+                          <div class="form-group">
+                            <label for="complaintType">Complaint Type</label>
+                            <center><input type="text" class="form-control complaintType" id="complaintType" name="complaintType" placeholder=" " ></center>
+                          </div>
                                </br>
 
+<!--                                
+                               <div class="form-group">
+							          <label for="complaintType">News Type :</label>
+							          <input type="text" class="form-control complaintType" id="complaintType" placeholder="" name="complaintType"></input>
+                        
+					          </div>  -->
                           <div><label for="complaintDescription">Description</label>
                             </br>
-                                  <textarea id="complaintDescription" name="complaintDescription" placeholder="Write something.." style="height:200px" ></textarea></div>
+                            <center><textarea id="complaintDescription" name="complaintDescription" placeholder="Write something.." style="height:200px" ></textarea></center></div>
                                  
                                 </br>
 
                           
-						<center><button type="submit" class="btn btn-dark btn-customized">Save</button></center>
+						<center><button type="submit" class="btn btn-success btn-customized">Save</button></center>
 						
               
            </form>
@@ -86,15 +111,15 @@
             <div class="row">
                 <div class="col-md-12 lead">
                     <div class="mt-2 mb-6 clearfix">
-                    <div style="margin-left:50px;width:1120px">
+                    <div style="margin-left:50px;width:1100px">
                     <center><div class="p-3 mb-2  mr-5 bg text-black">complaints details</div></center>
                   
                     <div class="search-container">
                      <input type="text" placeholder="Search with Name.." name="search" id="searchInput" onkeyup="searchTable()">
                      <button type="submit"><i class="fa fa-search"></i></button>
                         
-                        <button type="submit" class="btn btn-dark " style="margin:10px"; onclick="Export()"><i class="fa fa-download"></i>&nbsp; Download</button>
-                        <a href="complaints.php" class="btn btn-dark pull-center" style="margin:10px";><i class="fa fa-plus"></i>&nbsp;Add complaints</a>
+                        <button type="submit" class="btn btn-success " style="margin:10px"; onclick="Export()"><i class="fa fa-download"></i>&nbsp; Download</button>
+                        <a href="complaints.php" class="btn btn-success pull-center" style="margin:10px";><i class="fa fa-plus"></i>&nbsp;Add complaints</a>
                        
 </div>
 </div>
@@ -113,47 +138,29 @@
                       
 
   
-    const url ="https://iqbetspro.com/pg-management/Complaints-GET-API-managers-buildings.php";
-    getapi(url);
-    async function getapi(url) {
-        var manager_mail = document.getElementById("manager_email").value;
-   console.log("manager_mail=",manager_mail);
-   var building_name = document.getElementById("building_name").value;
-  var tenant_mobile=document.getElementById("tenant_mobile").value;
-  //var building_name =  localStorage.getItem("selected_building1");
- 
+const url ="https://iqbetspro.com/pg-management/Complaints-GET-API.php";
+     async function getapi(url) {
+         console.log('inside function..');
 
- 
-   console.log("building_name=",building_name);
-        fetch(url, {
-                  method: 'POST',
-                  body: JSON.stringify({
-   "manager_email":manager_mail,
-   "building_name":building_name,
-   "tenant_mobile":tenant_mobile
-}
-           )
-          })
-          .then(function(response){ 
-          return response.json()})
-          .then(function(data)
-          {
-                console.log(data);
-                show(data);
-        })
-    }
-        
-        
-          function show(data) {
+             let result = await fetch(url);
+         
+             let response = await result.json();
+             console.log('data',response);
+             show(response);
+             //document.getElementById("demo").innerHTML = response;
+
+         }
+         
+         getapi(url);
+
+         function show(data) {
              let tab =
                  `<tr>
                  <th>Id</th>
-                 
                  <th>Tenant Number</th>
                  <th>Complaint Type</th>
                  <th>Complaint Description</th>
                  <th>Created Date</th>
-                 <th>Response</th>
                  <th>Resolve Date</th>
                  <th>Comments</th>
                  <th>Action</th> 
@@ -168,7 +175,6 @@
              <td>${r.complaint_type}</td>
              <td>${r.complaint_description}</td>
              <td>${r.created_date}</td>	
-             <td>${r.response}</td>	
              <td>${r.resolve_date}</td>
              <td>${r.comments}</td>
              <td>
@@ -234,25 +240,22 @@ form.addEventListener('submit', function(e){
  e.preventDefault()
 
    var id=  document.getElementById("id_value").value; 
-    //var mobile= document.getElementById("tenantMobileNumber").value;
-    // var name= document.getElementById("tenantName").value;
     var complaintType= document.getElementById("complaintType").value;
     var complaintDescription= document.getElementById("complaintDescription").value;
-    //var comments =  document.getElementById("tenantComments").value;
-    //var joining_date =  document.getElementById("tenantJoiningDate").value;
-     //alert("Clicked on Save button...");
+
+     alert("Clicked on Save button...");
 
      fetch('https://iqbetspro.com/pg-management/update-Complaints-API.php', {
   method: 'POST',
   body: JSON.stringify(
     {   
     "id":id,
-    
+    "tenant_mobile":"8398391209",
     "complaint_type":complaintType,
-        
+      "created_date":"2022-11-30 10:22:00",    
     "complaint_description":complaintDescription,
-       
-   
+       "resolve_date":"2022-11-30",
+    "comments":"kkjk"
     
 }
   ),
@@ -265,7 +268,7 @@ form.addEventListener('submit', function(e){
   .then(function(data)
   {console.log(typeof(data[0].Message));
     console.log(data[0].Message.response);
-     //alert("ok")
+     alert("ok")
     if(data[0].Message.response =='error')
     window.location = "complaints.php";
     else
@@ -310,7 +313,7 @@ form.addEventListener('submit', function(e){
         }).catch(error => alert('Error:', error)); 
         
             
-                 // getapi(url);
+                 //  getapi(url);
                 }
          
    
@@ -337,6 +340,5 @@ form.addEventListener('submit', function(e){
         }
 </script>
 </script>
-    </body>
-    </html>
-    
+  </body>
+</html>

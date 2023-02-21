@@ -5,11 +5,7 @@
 ?>
 <head>
 <style>
-/* h2 {
-  text-align: center;
-  color: black;
-} */
-
+h2 {text-align: center;}
 </style>     
 </head>
  <!-- nav -->

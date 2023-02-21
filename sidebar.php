@@ -1,8 +1,7 @@
 <div class="sidebar">
     <nav class="navbar bg-light navbar-light">
         <a href="index.html" class="navbar-brand mx-4 mb-3">
-        <h5 style="margin-top:10px;color:black">Hi  <?php echo $_SESSION['username'] ;?> <?php echo $tenant_name;?> </h5>
-
+        <h5 style="margin-top:10px;color:white">Hi  <?php echo $_GET['name'] ?><?php echo $_SESSION['username'] ;?> <?php echo $tenant_name;?> </h5>
             <img src="img/logo.png" style="width:100%;" />
         </a>
       
@@ -33,10 +32,10 @@
 
 
 <!-- Sidebar -->
-<div class="sidebar"   id="mySidebar">
+<div class="sidebar" id="mySidebar">
 <div class="side-header">
     <img src="./assets/images/logo.png" width="120" height="120" alt="Swiss Collection"> 
-    <h2 style="margin-top:10px;">Hi  </h2>
+    <h5 style="margin-top:10px;color:black">Hi  </h5>
 </div>
 
 <hr style="border:1px solid; background-color:#FADBD8; border-color:#FADBD8;">
@@ -56,7 +55,7 @@
  
 <div id="main">
 <div class="w3-teal">
-    <button class="openbtn"  style="background-color:grey" onclick="openNav()"><i class="fa fa-home"></i></button>
+    <button class="openbtn" onclick="openNav()"><i class="fa fa-home"></i></button>
     <div class="w3-container">
    
       </div>
@@ -126,6 +125,34 @@ else
     $manager_mobile = $_SESSION['manager_mobile_no'];
 }
 
+if(isset($_GET['floor_no']))
+{
+    $floor_no = $_GET['floor_no']; 
+}
+else
+{
+    $floor_no = $_SESSION['floor_no'];
+}
+if(isset($_GET['room_no']))
+{
+    $room_no = $_GET['room_no']; 
+}
+else
+{
+    $room_no = $_SESSION['room_no'];
+}
+if(isset($_GET['bed_no']))
+{
+    $bed_no = $_GET['bed_no']; 
+}
+else
+{
+    $bed_no = $_SESSION['bed_no'];
+}
+
+
+
+
 
 echo "<h5 style='color:black; margin-left:30vw'>"."Hello " . $tenant_name . ".<h5><br>";
 
@@ -136,12 +163,27 @@ echo '<input type="hidden" id="manager_mobile" value="'.$manager_mobile.'">';
 
 echo '<input type="hidden" id="building_name"  value="'.$building_name.'">';
 echo '<input type="hidden" id="tenant_mobile" value="'.$tenant_mobile.'">';
+echo '<input type="hidden" id="tenant_name" value="'.$tenant_name.'">';
 
 
 echo '<input type="hidden" id="tenant_email"  value="'.$tenant_email.'">';
-
-
-
-
+echo '<input type="hidden" id="floor_no"  value="'.$floor_no.'">';
+echo '<input type="hidden" id="room_no"  value="'.$room_no.'">';
+echo '<input type="hidden" id="bed_no"  value="'.$bed_no.'">';
+?>
+ <script>
+//  console.log("building_name=",building_name)
+//     console.log("managerEmail=",manager_email)
+//     console.log("managerMobile=",manager_mobile)
+//     console.log("tenantUsername=",tenant_name)
+//     console.log("tenantMobileNumbe=",tenant_mobile)
+//     console.log("tenantEmail=",tenant_email)
+   
+//     console.log("floor_no=",floor_no)
+//     console.log("bed_no=",bed_no)
+//     console.log("room_no=",room_no,)
+   
+ </script>
+<?php
 ?>
 
