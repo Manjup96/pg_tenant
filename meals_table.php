@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <link rel="stylesheet" href="./assets/css/style.css"></link>
+       <link rel="stylesheet" href="./assets/css/respo.css"></link>
 
 
    
@@ -53,6 +54,16 @@
                 <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 3px;
 				border-radius: 20px;
                  padding: 20px;box-shadow: 5px 10px #76D7C4;">
+
+<div id="close_icon_desktop_view" >
+          <a href="meals_table.php"> <div style="padding-left:500px">
+        <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
+          </div>
+          <div class="close_icon_mobile_view">
+          <a href="meals_table.php"> <div style="padding-left:220px">
+        <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
+          </div>
+
    <form id="meals_edit">
      <input type="hidden"  id="id_value">
   <h1><center><div class="p-3 mb-2 bg- text-black" ><p class="two">Meals form</p></div></center></h1>
