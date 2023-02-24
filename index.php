@@ -37,13 +37,19 @@ $_SESSION["username"] = $_GET['tenant_name'];
     
     	
     	<div class="container h-100 ">
-            <div class="row h-100 justify-content-center align-items-center"  >
+            <!-- <div class="row h-100 justify-content-center align-items-center"  >
                 <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 5px;border-radius: 25px;
                  padding: 20px;
-  box-shadow: 5px 10px #76D7C4;">
+  box-shadow: 5px 10px #76D7C4;"> -->
+  <div class="row h-100 justify-content-center align-items-center"  >
+                <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width:5px; background-color: white; border-radius: 25px;
+                 padding: 20px;
+  box-shadow: 10px 10px #a8a39d;">
+					
+                		
 					<!-- Form  dashboard.php-->
                 	<form id="form" class="form-example" action="" method="post" >
-                    <h1><center><div class="p-3 mb-2 bg- text-black" ><p class="two">PG Manager Login Form</p></div></center></h1>
+                    <h1><center><div class="p-3 mb-2 bg- text-black" ><p class="two smokewhite_bg_color">PG Login Form</p></div></center></h1>
                 		
                 		<!-- Input fields -->
                 		<div class="form-group">
@@ -54,7 +60,7 @@ $_SESSION["username"] = $_GET['tenant_name'];
 							<label for="password">Password:</label>
 							<input type="password" class="form-control password" id="password" placeholder="Password..." name="password">
 						</div>
-						<center> <input type="submit" value="Login"/></center>
+						<center> <input type="submit" style="border-width:5px;border-color:white" value="Login"/></center>
                 		<!-- End input fields -->
                 		
                 	</form>

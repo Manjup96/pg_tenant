@@ -50,10 +50,10 @@
        ?>
   
     	<div class="container h-80 ">
-            <div class="row h-90 justify-content-center align-items-center">
-                <div class="col-10 col-md-8 col-lg-6" style="  border-style: solid;border-width: 3px;
+      <div class="row h-90 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6" style="border-style: solid; background-color: white;border-width: 3px;
 				border-radius: 20px;
-                 padding: 20px;box-shadow: 5px 10px #76D7C4;">
+                 padding: 20px;box-shadow: 5px 10px grey;">
 
                  
 <div id="close_icon_desktop_view" >
@@ -61,14 +61,14 @@
         <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
           </div>
           <div class="close_icon_mobile_view">
-          <a href="meals_table.php"> <div style="padding-left:220px">
+          <a href="meals_table.php"> <div style="padding-left:200px">
         <button style="font-size:24px"><i class="fa fa-close"></i></button></div></a>
           </div>
 					<!-- Form -->
                     <?php if(!empty($msg)){echo $msg; }?></p>
                     
                     <form id="meals" class="form-example" action="" method="post" >
-					<h1><center><div class="p-3 m-2  bg- text-black" ><p class="two">Meals Form</p></div></center></h1>
+					<h1><center><div class="p-3 m-2  bg- text-black" ><p class="two smokewhite_bg_color">Meals Form</p></div></center></h1>
                 		
                 
                               
